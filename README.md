@@ -1,3 +1,3 @@
 # Des Lettres
 
-![Slide 16_9 - 2](https://user-images.githubusercontent.com/62747193/134239223-bf621eca-18f3-4b04-99f4-8f9731c6af31.png)
+![Artboard 1](https://user-images.githubusercontent.com/62747193/134721046-9c453237-9bd6-4f65-8dd6-448bcea4ba52.png)

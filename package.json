@@ -11,6 +11,9 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@heroicons/react": "^1.0.4",
+    "@mui/icons-material": "^5.0.3",
     "@mui/material": "^5.0.3",
     "@storybook/addon-postcss": "^2.0.0",
     "gsap": "^3.8.0",

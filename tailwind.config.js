@@ -8,6 +8,7 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			serif: ["Cormorant Garamond", "serif", "system-ui"],
+			sans: ["Roboto", "sans-serif"],
 		},
 		fontSize: {
 			h1: ".75rem",

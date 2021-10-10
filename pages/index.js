@@ -19,7 +19,12 @@ export default function Home() {
 			<HeroSection />
 
 			{/* Essays Letters Catalogue */}
-			<SummaryCatalogue />
+			<SummaryCatalogue linkTitle="On Self"/>
+			<SummaryCatalogue linkTitle="Tenets"/>
+			<SummaryCatalogue linkTitle="Justice and Society"/>
+			<SummaryCatalogue linkTitle="Statecraft"/>
+			<SummaryCatalogue linkTitle="Stratagems"/>
+
 		</div>
 	);
 }

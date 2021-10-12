@@ -23,9 +23,17 @@ module.exports = {
 			"p-body": "1.25em",
 			logo: "1.5575em",
 		},
+		backgroundImage: {
+			"mainImage-home": "url('/assets/mainMenu/home-bg.jpg')",
+			"mainImage-society": "url('/assets/mainMenu/society-bg.png')",
+			"mainImage-statecraft": "url('/assets/mainMenu/statecraft-bg.png')",
+			"mainImage-tenets": "url('/assets/mainMenu/tenets-bg.jpg')",
+			"mainImage-security": "url('/assets/mainMenu/security-bg.jpg')",
+			"mainImage-self": "url('/assets/mainMenu/self-bg.jpg')",
+		},
 	},
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require("ps-scrollbar-tailwind")],
 };

@@ -1,10 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-function BurgerMenu() {
+function BurgerMenu({ isMenuVisible, setIsMenuVisible }) {
 	const parentRef = useRef();
 	const firstLine = useRef();
 	const secondLine = useRef();
+
+	const toggleMenu = () => {
+		setIsMenuVisible(!isMenuVisible);
+	};
 
 	const onHover = () => {
 		gsap.to(secondLine.current, {
@@ -36,21 +40,50 @@ function BurgerMenu() {
 		});
 	};
 
+	const onOpenLeave = () => {
+		gsap.to(secondLine.current, {
+			opacity: 0.7,
+			duration: 0.4,
+			ease: "power2",
+		});
+		gsap.to(firstLine.current, {
+			opacity: 0.7,
+			duration: 0.4,
+			ease: "power2",
+		});
+	};
+
 	return (
 		<div
 			onMouseEnter={onHover}
-			onMouseLeave={onLeave}
+			onMouseLeave={isMenuVisible ? onOpenLeave : onLeave}
+			onClick={toggleMenu}
 			ref={parentRef}
-			className="w-[25px] h-[25px] flex flex-col items-end justify-center gap-1 hover:cursor-pointer"
+			className="w-[25px] h-[25px] flex flex-col items-end justify-center gap-1 hover:cursor-pointer z-10"
 		>
-			<div
-				ref={firstLine}
-				className="h-[2px] bg-white w-[100%] opacity-70"
-			/>
-			<div
-				ref={secondLine}
-				className="h-[2px] bg bg-white w-[50%] opacity-70"
-			/>
+			{isMenuVisible ? (
+				<>
+					<div
+						ref={firstLine}
+						className="h-[2px] bg-white w-full opacity-70"
+					/>
+					<div
+						ref={secondLine}
+						className="h-[2px] bg bg-white w-full opacity-70"
+					/>
+				</>
+			) : (
+				<>
+					<div
+						ref={firstLine}
+						className="h-[2px] bg-white w-[100%] opacity-70"
+					/>
+					<div
+						ref={secondLine}
+						className="h-[2px] bg bg-white w-[50%] opacity-70"
+					/>
+				</>
+			)}
 		</div>
 	);
 }

@@ -1,14 +1,24 @@
 import React from "react";
 import FeaturedTag from "../Common/FeaturedTag";
+import smartTruncate from "smart-truncate";
+import { format, localeFormat } from "light-date";
 
 function MainArticleLink({ data }) {
-	const { title, featured } = data;
+	const { id, title, featured, reading_time, excerpt, published_at } = data;
+	const interimDate = new Date(published_at);
+
 
 	return (
-		<div className="h-36 w-full flex flex-col items-start justify-center">
+		<div
+			id={id}
+			className="h-36 w-full flex flex-col items-start justify-center"
+		>
 			<h2 className="text-white font-serif text-[20px] font-extralight">
 				<a href="#">{title}</a>
 			</h2>
+			<p className="text-white font-serif opacity-30 text-[14px] my-2">
+				{smartTruncate(excerpt, 90)}
+			</p>
 			<div className="w-full h-[30px] my-[10px] text-white flex items-center gap-6">
 				<div className="Date flex items-center opacity-40">
 					<svg
@@ -26,7 +36,7 @@ function MainArticleLink({ data }) {
 						/>
 					</svg>
 					<p className="text-sans text-[14px] font-light ml-1">
-						Aug 28
+						{localeFormat(interimDate, "{MMM}") + " " + format(interimDate, "{dd}")}
 					</p>
 				</div>
 				<div className="Time flex items-center opacity-40">
@@ -45,7 +55,7 @@ function MainArticleLink({ data }) {
 						/>
 					</svg>
 					<p className="text-sans text-[14px] font-light ml-1">
-						17 mins
+						{reading_time} mins
 					</p>
 				</div>
 				{featured && <FeaturedTag />}

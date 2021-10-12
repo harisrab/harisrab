@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import useScrollPosition from "@react-hook/window-scroll";
 import styled from "styled-components";
 
@@ -10,6 +10,7 @@ import HeroSection from "../components/MainPage/HeroSection";
 import SummaryCatalogue from "../components/MainPage/SummaryCatalogue";
 import Footer from "../components/Common/Footer";
 import ScrollToTopButton from "../components/Buttons/ScrollToTopButton";
+import screenfull from "screenfull";
 
 // Get Utility for Getting Ghost Posts
 import { getPosts } from "../lib/posts";
@@ -19,10 +20,17 @@ export default function Home({ newPosts }) {
 
 	useEffect(() => {
 		console.log("Posts ===> ", newPosts);
+		window.addEventListener("load", function () {
+			// Set a timeout...
+			setTimeout(function () {
+				// Hide the address bar!
+				window.scrollTo(0, 1);
+			}, 0);
+		});
 	}, []);
 
 	return (
-		<MainWrapper className="bg-black h-auto flex flex-col items-center overflow-hidden scrollbar hover:scrollbar-track-blue-200 hover:scrollbar-red-200">
+		<div className="bg-black h-auto flex flex-col items-center overflow-hidden scrollbar hover:scrollbar-track-blue-200 hover:scrollbar-red-200">
 			<HiddenHeader />
 			<Header />
 			<ScrollToTopButton scrollPos={scrollY} />
@@ -48,7 +56,7 @@ export default function Home({ newPosts }) {
 
 			{/* Footer */}
 			<Footer />
-		</MainWrapper>
+		</div>
 	);
 }
 
@@ -67,7 +75,6 @@ export async function getStaticProps(context) {
 
 	posts.forEach((eachPost, i) => {
 		const tags = eachPost.tags.map((eachTag) => eachTag.name);
-		console.log(tags);
 
 		if (tags.includes("security")) {
 			newPosts["security"].length <= 3 &&
@@ -103,9 +110,3 @@ export async function getStaticProps(context) {
 		props: { newPosts },
 	};
 }
-
-const MainWrapper = styled.div`
-	*::-webkit-scrollbar {
-		display: none;
-	}
-`;

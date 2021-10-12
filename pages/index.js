@@ -18,6 +18,14 @@ import { getPosts } from "../lib/posts";
 export default function Home({ newPosts }) {
 	const scrollY = useScrollPosition(50);
 
+	const mainMenuLinks = [
+		{ display: "On Self", link: "self" },
+		{ display: "Justice and Society", link: "society" },
+		{ display: "Tenets", link: "tenets" },
+		{ display: "Statecraft", link: "statecraft" },
+		{ display: "Stratagems", link: "security" },
+	];
+
 	useEffect(() => {
 		console.log("Posts ===> ", newPosts);
 		window.addEventListener("load", function () {
@@ -30,29 +38,25 @@ export default function Home({ newPosts }) {
 	}, []);
 
 	return (
-		<div className="bg-black h-auto flex flex-col items-center overflow-hidden scrollbar hover:scrollbar-track-blue-200 hover:scrollbar-red-200">
+		<div className="bg-black h-auto flex flex-col items-center overflow-hidden">
+			{/* Header */}
 			<HiddenHeader />
 			<Header />
 			<ScrollToTopButton scrollPos={scrollY} />
 
-			{/* Hero Section Main Page */}
+			{/* Hero Section */}
 			<HeroSection />
 
-			{/* Essays Letters Catalogue */}
-			<SummaryCatalogue linkTitle="On Self" posts={newPosts["self"]} />
-			<SummaryCatalogue linkTitle="Tenets" posts={newPosts["tenets"]} />
-			<SummaryCatalogue
-				linkTitle="Justice and Society"
-				posts={newPosts["society"]}
-			/>
-			<SummaryCatalogue
-				linkTitle="Statecraft"
-				posts={newPosts["statecraft"]}
-			/>
-			<SummaryCatalogue
-				linkTitle="Stratagems"
-				posts={newPosts["security"]}
-			/>
+			{/* Body */}
+			<ul>
+				{mainMenuLinks.map((eachLink, i) => (
+					<SummaryCatalogue
+						key={i}
+						linkTitle={eachLink.display}
+						posts={newPosts[eachLink.link]}
+					/>
+				))}
+			</ul>
 
 			{/* Footer */}
 			<Footer />

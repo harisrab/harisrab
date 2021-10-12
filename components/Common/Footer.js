@@ -13,8 +13,12 @@ function Footer() {
 		"Twitter",
 		"Instagram",
 	];
+
 	return (
-		<div className="bg-[#F5F5F5] w-[100vw] h-[750px] px-10 flex flex-col items-center justify-center gap-5">
+		// <div className="h-[750px] w-screen bg-red-600 ">
+
+		// </div>
+		<div className="bg-[#F5F5F5] w-screen h-[750px] px-10 flex flex-col items-center justify-center gap-5">
 			<div className="w-full h-[150px] flex flex-col items-center justify-center">
 				<h3 className="font-serif text-[33px] font-medium">Des Lettres</h3>
 				<p className="font-serif text-[15px] mt-2 opacity-50">

@@ -10,7 +10,7 @@ export default CatalogueButton;
 
 const ButtonWrapper = styled(Button)`
 	&&&{
-		border: 1px solid #fcfcfcd3 !important;
+		border: 1px solid #fcfcfcd3;
 		border-radius: 20px !important;
 		font-family: serif !important;
 		text-transform: capitalize !important;

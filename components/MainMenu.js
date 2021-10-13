@@ -3,6 +3,7 @@ import gsap from "gsap";
 import BgImage from "./BgImage";
 import Link from "next/link";
 
+
 function MainMenu({ isMenuVisible }) {
 	const mainMenuLinks = [
 		{ display: "Home", link: "/" },

@@ -37,7 +37,7 @@ function MainArticleLink({ data }) {
 					id={id}
 					className="h-36 w-full flex flex-col items-start justify-center"
 				>
-					<h2 className="text-white font-serif text-[20px] font-extralight">
+					<h2 className="text-white font-serif text-[20px] font-extralight hover:opacity-60 transition-all duration-300">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>
 							{title}
 						</Link>

@@ -50,6 +50,26 @@ function JumpingArrow() {
 				</div>
 			</Mobile>
 
+			<Tablet>
+				<div className="text-white flex flex-col items-center justify-center h-[40px] mt-12 absolute left-1/2 transform -translate-x-1/2  bottom-[50px]">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						className="h-6 w-6"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+						ref={arrow}
+					>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth={2}
+							d="M19 9l-7 7-7-7"
+						/>
+					</svg>
+				</div>
+			</Tablet>
+
 			<Desktop>
 				<div className="text-white flex flex-col items-center justify-center h-[40px] mt-12 absolute left-1/2 transform -translate-x-1/2  bottom-4">
 					<svg
@@ -68,7 +88,6 @@ function JumpingArrow() {
 						/>
 					</svg>
 				</div>
-
 			</Desktop>
 		</>
 	);

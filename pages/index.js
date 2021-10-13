@@ -38,7 +38,7 @@ export default function Home({ newPosts }) {
 	}, []);
 
 	return (
-		<div className="bg-black h-auto flex flex-col items-center overflow-hidden">
+		<div className="bg-[#0B0909] h-auto flex flex-col items-center overflow-hidden">
 			{/* Header */}
 			<HiddenHeader />
 			<Header />

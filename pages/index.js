@@ -74,6 +74,7 @@ export async function getStaticProps(context) {
 		society: [],
 		statecraft: [],
 	};
+	
 
 	const sections = ["security", "tenets", "self", "society", "statecraft"];
 

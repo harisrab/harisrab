@@ -1,9 +1,25 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
 
-function ScrollToTopButton({ scrollPos }) {
+function ScrollToTopButton() {
 	const circleRef = useRef();
+	const [scrollPos, setScrollY] = useState(0);
+
+	function logit() {
+		setScrollY(window.pageYOffset);
+	}
+
+	useEffect(() => {
+		function watchScroll() {
+			window.addEventListener("scroll", logit);
+		}
+		watchScroll();
+		// Remove listener (like componentWillUnmount)
+		return () => {
+			window.removeEventListener("scroll", logit);
+		};
+	}, []);
 
 	useEffect(() => {
 		if (scrollPos > 150) {
@@ -29,7 +45,7 @@ function ScrollToTopButton({ scrollPos }) {
 			{scrollPos > 150 ? (
 				<div
 					onClick={scrollToTop}
-					className="fixed text-white bottom-5 right-5 h-[50px] w-[50px] bg-[#00000048] rounded-full flex items-center justify-center filter backdrop-blur-sm border-[1px] border-[#ffffff13] hover:bg-[#ffffff1e] cursor-pointer transition-all duration-300"
+					className="fixed text-white bottom-5 right-5 h-[50px] w-[50px] bg-[#00000048] rounded-full flex items-center justify-center filter backdrop-blur-sm border-[1px] border-[#ffffff13] hover:bg-[#ffffff1e] cursor-pointer transition-all duration-300 z-[100000]"
 				>
 					<div className="h-full w-full relative">
 						<svg

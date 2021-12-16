@@ -1,99 +1,89 @@
 import Image from "next/image";
 import JumpingArrow from "../Common/JumpingArrow";
-import MediaQuery from "react-responsive";
+import styled from "styled-components";
 
-import { useMediaQuery } from "react-responsive";
-import screenfull from "screenfull";
-
-function HeroSection() {
-	const Desktop = ({ children }) => {
-		const isDesktop = useMediaQuery({ minWidth: 992 });
-		return isDesktop ? children : null;
-	};
-	const Tablet = ({ children }) => {
-		const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
-		return isTablet ? children : null;
-	};
-	const Mobile = ({ children }) => {
-		const isMobile = useMediaQuery({ maxWidth: 767 });
-		return isMobile ? children : null;
-	};
-
+const HeroSection = () => {
 	return (
-		<>
-			<Mobile>
-				<div className="w-full h-[100vh] flex flex-col items-center justify-center relative">
-					<div className="h-full w-full flex justify-center items-center">
-						<div className="flex flex-col items-center justify-center">
-							<Image
-								className=""
-								src="/assets/hero-image.png"
-								alt=""
-								height={330.14}
-								width={210.4}
-								priority
-							/>
-							<h1 className="text-white font-serif font-extralight text-[23px]">
-								He who has a why to live
-								<br className="text-white md:hidden" />
-								can bear almost any how.
-							</h1>
-							<p className="font-serif opacity-70 text-white italic font-light mt-4">
-								Nietzsche
-							</p>
-						</div>
-					</div>
-					<JumpingArrow />
-				</div>
-			</Mobile>
+		<HeroWrapper>
+			{/* <InternalWrapper>
+				<Container>
+					<h1 className="left"> He who has a why to live</h1>
 
-			<Tablet>
-				<div className="w-full h-[100vh] flex flex-col items-center justify-center relative">
-					<div className="h-full w-full flex items-center justify-center">
-						<div className="w-full h-auto flex items-center justify-between px-12">
-							<h1 className="text-white font-serif font-extralight text-[24px]">
-								He who has a why to live
-							</h1>
-							<Image
-								src="/assets/hero-image.png"
-								alt=""
-								height={400.175}
-								width={262.675}
-								priority
-							/>
-							<h1 className="text-white font-serif font-extralight text-[24px]">
-								can bear almost any how.
-							</h1>
-						</div>
-					</div>
-					<JumpingArrow />
-				</div>
-			</Tablet>
-
-			<Desktop>
-				<div className="w-full h-[100vh] flex flex-col items-center justify-center relative">
-					<div className="h-full w-full flex items-center justify-center">
-						<div className="w-full h-auto flex items-center justify-center">
-							<h1 className="text-white font-serif font-extralight text-[28px] mr-6">
-								He who has a why to live
-							</h1>
-							<Image
-								src="/assets/hero-image.png"
-								alt=""
-								height={480.21}
-								width={315.6}
-								priority
-							/>
-							<h1 className="text-white font-serif font-extralight text-[28px] ml-6">
-								can bear almost any how.
-							</h1>
-						</div>
-					</div>
-					<JumpingArrow />
-				</div>
-			</Desktop>
-		</>
+					<h1 className="right">can bear almost any how.</h1>
+				</Container>
+			</InternalWrapper> */}
+		</HeroWrapper>
 	);
-}
+};
 
 export default HeroSection;
+
+const HeroWrapper = styled.div`
+	height: 15vh;
+	width: 100vw;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	background-color: #0b0909;
+	position: relative;
+`;
+
+const InternalWrapper = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@media only screen and (min-width: 768px) and (max-width: 991px) {
+		padding-left: 3rem /* 48px */;
+		padding-right: 3rem /* 48px */;
+	}
+`;
+
+const Container = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	width: 100%;
+
+	background-color: blue;
+
+	.left {
+		font-family: "Cormorant Garamond";
+		color: white;
+		font-weight: 100;
+		font-size: 28px;
+		margin-right: 1.5rem;
+	}
+
+	.right {
+		font-family: "Cormorant Garamond";
+		color: white;
+		font-weight: 100;
+		font-size: 28px;
+		margin-left: 1.5rem;
+	}
+
+	/* 
+	@media only screen and (min-width: 768px) and (max-width: 991px) {
+		h1 {
+			font-size: 24px;
+		}
+
+		img {
+			height: 400.175px;
+			width: 262.675px;
+		}
+	}
+
+	@media only screen and (max-width: 767px) {
+		h1 {
+			font-size: 23px;
+		}
+
+		img {
+		}
+	} */
+`;

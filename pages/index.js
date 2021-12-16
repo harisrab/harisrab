@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useScrollPosition from "@react-hook/window-scroll";
 import styled from "styled-components";
 
@@ -16,8 +16,6 @@ import screenfull from "screenfull";
 import { getPosts } from "../lib/posts";
 
 export default function Home({ newPosts }) {
-	const scrollY = useScrollPosition(50);
-
 	const mainMenuLinks = [
 		{ display: "On Self", link: "self" },
 		{ display: "Justice and Society", link: "society" },
@@ -26,29 +24,19 @@ export default function Home({ newPosts }) {
 		{ display: "Stratagems", link: "security" },
 	];
 
-	useEffect(() => {
-		console.log("Posts ===> ", newPosts);
-		window.addEventListener("load", function () {
-			// Set a timeout...
-			setTimeout(function () {
-				// Hide the address bar!
-				window.scrollTo(0, 1);
-			}, 0);
-		});
-	}, []);
-
 	return (
 		<div className="bg-[#0B0909] h-auto flex flex-col items-center overflow-hidden">
 			{/* Header */}
 			<HiddenHeader />
 			<Header />
-			<ScrollToTopButton scrollPos={scrollY} />
+			<ScrollToTopButton />
 
 			{/* Hero Section */}
-			<HeroSection />
+			{/* <HeroSection /> */}
 
 			{/* Body */}
-			<ul>
+
+			<ul className="mt-[150px]">
 				{mainMenuLinks.map((eachLink, i) => (
 					<SummaryCatalogue
 						key={i}
@@ -64,8 +52,23 @@ export default function Home({ newPosts }) {
 	);
 }
 
+
+const HeroWrapper = styled.div`
+	height: 100vh;
+	width: 100vw;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	background-color: #0b0909;
+`;
+
 export async function getStaticProps(context) {
 	const posts = await getPosts();
+
+	// console.log(posts);
+	// console.log("New Posts ====> ", posts);
 
 	let newPosts = {
 		security: [],
@@ -74,12 +77,11 @@ export async function getStaticProps(context) {
 		society: [],
 		statecraft: [],
 	};
-	
-
-	const sections = ["security", "tenets", "self", "society", "statecraft"];
 
 	posts.forEach((eachPost, i) => {
 		const tags = eachPost.tags.map((eachTag) => eachTag.name);
+
+		console.log(eachPost.title);
 
 		if (tags.includes("security")) {
 			newPosts["security"].length <= 3 &&
@@ -94,7 +96,7 @@ export async function getStaticProps(context) {
 			newPosts["self"].length <= 3 && newPosts["self"].push(eachPost);
 		}
 
-		if (tags.includes("self")) {
+		if (tags.includes("society")) {
 			newPosts["society"].length <= 3 &&
 				newPosts["society"].push(eachPost);
 		}

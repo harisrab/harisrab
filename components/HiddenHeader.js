@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from 'next/script'
 
 function HiddenHeader() {
 	return (
@@ -10,6 +11,9 @@ function HiddenHeader() {
 			/>
 			<meta name="apple-mobile-web-app-capable" content="yes" />
 			<link rel="icon" href="/favicon.ico" />
+
+			
+
 		</Head>
 	);
 }

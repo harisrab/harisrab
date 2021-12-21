@@ -15,6 +15,7 @@ import MainArticleLink from "../components/MainPage/MainArticleLink";
 
 // Get Utility for Getting Ghost Posts
 import { getPosts } from "../lib/posts";
+import Analytics from "../components/Analytics";
 
 export default function Home({ newPosts }) {
 	const mainMenuLinks = [
@@ -33,6 +34,8 @@ export default function Home({ newPosts }) {
 			<HiddenHeader />
 			<Header />
 			<ScrollToTopButton />
+
+			<Analytics />
 
 			{/* Hero Section */}
 			{/* <HeroSection /> */}

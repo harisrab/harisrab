@@ -7,7 +7,7 @@ function Logo() {
 			<Link href="/">
 				<a>
 					<h1 className="text-logo font-serif text-white font-light">
-						Des Lettres.
+						Haris Rashid.
 					</h1>
 				</a>
 			</Link>

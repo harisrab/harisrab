@@ -18,7 +18,7 @@ function Footer() {
 		// <div className="h-[750px] w-screen bg-red-600 ">
 
 		// </div>
-		<div className="bg-[#F5F5F5] w-screen h-[750px] px-10 flex flex-col items-center justify-center gap-5 md:h-[250px] md:flex-row md:justify-between">
+		<div className="bg-[#F5F5F5] w-screen h-[750px] px-10 flex flex-col items-center justify-center gap-5 md:h-[250px] md:flex-row md:justify-between sm:pb-[30px]">
 			<div className="w-full h-[150px] flex flex-col items-center justify-center md:w-[35%] md:items-start md:ml-10">
 				<h3 className="font-serif text-[33px] font-medium">
 					Des Lettres

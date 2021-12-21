@@ -40,7 +40,7 @@ export default function Home({ newPosts }) {
 			{/* Body */}
 
 			<PostHolder>
-				<div className="flex flex-col items-center px-7 gap-[50px] md:gap-[35px]">
+				<div className="flex flex-col items-start px-7 gap-[50px] md:gap-[35px] max-w-[1200px] mx-5">
 					{newPosts.map((eachPost, i) => (
 						<MainArticleLink key={i} data={eachPost} />
 					))}
@@ -69,8 +69,12 @@ const PostHolder = styled.div`
 	min-height: 500px;
 
 	background-color: #0b0909;
-	padding-top: 150px;
-	padding-bottom: 150px;
+	margin-top: 150px;
+	margin-bottom: 150px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 
 const HeroWrapper = styled.div`

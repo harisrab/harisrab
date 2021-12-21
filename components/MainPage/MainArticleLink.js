@@ -35,7 +35,7 @@ function MainArticleLink({ data }) {
 			<Mobile>
 				<div
 					id={id}
-					className="h-[20rem] w-full flex flex-col items-start justify-center ml-1 pl-[20px] mr-15"
+					className="h-[20rem] w-fit flex flex-col items-start justify-center"
 				>
 					<h2 className="text-white font-serif text-[25px] font-extralight hover:opacity-70 duration-200">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>
@@ -100,7 +100,7 @@ function MainArticleLink({ data }) {
 			<Tablet>
 				<div
 					id={id}
-					className="h-[20rem] w-full flex flex-col items-start justify-center ml-1 pl-[100px] mr-24"
+					className="h-[20rem] w-fit flex flex-col items-start justify-center"
 				>
 					<h2 className="text-white font-serif text-[30px] font-extralight hover:opacity-70 duration-200">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>
@@ -166,7 +166,7 @@ function MainArticleLink({ data }) {
 			<Desktop>
 				<div
 					id={id}
-					className="h-[20rem] w-full flex flex-col items-start justify-center ml-10 pl-[200px]"
+					className="h-[20rem] w-fit flex flex-col items-start justify-center bg-red-800"
 				>
 					<h2 className="text-white font-serif text-[34px] font-extralight hover:opacity-70 duration-200">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>

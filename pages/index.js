@@ -11,6 +11,7 @@ import SummaryCatalogue from "../components/MainPage/SummaryCatalogue";
 import Footer from "../components/Common/Footer";
 import ScrollToTopButton from "../components/Buttons/ScrollToTopButton";
 import screenfull from "screenfull";
+import MainArticleLink from "../components/MainPage/MainArticleLink";
 
 // Get Utility for Getting Ghost Posts
 import { getPosts } from "../lib/posts";
@@ -24,6 +25,8 @@ export default function Home({ newPosts }) {
 		{ display: "Stratagems", link: "security" },
 	];
 
+	console.log("Title ===> ", newPosts[0].title);
+
 	return (
 		<div className="bg-[#0B0909] h-auto flex flex-col items-center overflow-hidden">
 			{/* Header */}
@@ -36,6 +39,15 @@ export default function Home({ newPosts }) {
 
 			{/* Body */}
 
+			<PostHolder>
+				<div className="flex flex-col items-center px-7 gap-[50px] md:gap-[35px]">
+					{newPosts.map((eachPost, i) => (
+						<MainArticleLink key={i} data={eachPost} />
+					))}
+				</div>
+			</PostHolder>
+
+			{/* 
 			<ul className="mt-[150px]">
 				{mainMenuLinks.map((eachLink, i) => (
 					<SummaryCatalogue
@@ -44,7 +56,7 @@ export default function Home({ newPosts }) {
 						posts={newPosts[eachLink.link]}
 					/>
 				))}
-			</ul>
+			</ul> */}
 
 			{/* Footer */}
 			<Footer />
@@ -52,6 +64,14 @@ export default function Home({ newPosts }) {
 	);
 }
 
+const PostHolder = styled.div`
+	width: 100%;
+	min-height: 500px;
+
+	background-color: #0b0909;
+	padding-top: 150px;
+	padding-bottom: 150px;
+`;
 
 const HeroWrapper = styled.div`
 	height: 100vh;
@@ -70,13 +90,15 @@ export async function getStaticProps(context) {
 	// console.log(posts);
 	// console.log("New Posts ====> ", posts);
 
-	let newPosts = {
-		security: [],
-		tenets: [],
-		self: [],
-		society: [],
-		statecraft: [],
-	};
+	// let newPosts = {
+	// 	security: [],
+	// 	tenets: [],
+	// 	self: [],
+	// 	society: [],
+	// 	statecraft: [],
+	// };
+
+	let newPosts = [];
 
 	posts.forEach((eachPost, i) => {
 		const tags = eachPost.tags.map((eachTag) => eachTag.name);
@@ -84,26 +106,28 @@ export async function getStaticProps(context) {
 		console.log(eachPost.title);
 
 		if (tags.includes("security")) {
-			newPosts["security"].length <= 3 &&
-				newPosts["security"].push(eachPost);
+			// newPosts["security"].length <= 3 && newPosts["security"].push(eachPost);
+			newPosts.push(eachPost);
 		}
 
 		if (tags.includes("tenets")) {
-			newPosts["tenets"].length <= 3 && newPosts["tenets"].push(eachPost);
+			// newPosts["tenets"].length <= 3 && newPosts["tenets"].push(eachPost);
+			newPosts.push(eachPost);
 		}
 
 		if (tags.includes("self")) {
-			newPosts["self"].length <= 3 && newPosts["self"].push(eachPost);
+			// newPosts["self"].length <= 3 && newPosts["self"].push(eachPost);
+			newPosts.push(eachPost);
 		}
 
 		if (tags.includes("society")) {
-			newPosts["society"].length <= 3 &&
-				newPosts["society"].push(eachPost);
+			// newPosts["society"].length <= 3 && newPosts["society"].push(eachPost);
+			newPosts.push(eachPost);
 		}
 
 		if (tags.includes("statecraft")) {
-			newPosts["statecraft"].length <= 3 &&
-				newPosts["statecraft"].push(eachPost);
+			// newPosts["statecraft"].length <= 3 && newPosts["statecraft"].push(eachPost);
+			newPosts.push(eachPost);
 		}
 	});
 

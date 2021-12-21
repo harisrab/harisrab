@@ -35,16 +35,15 @@ function MainArticleLink({ data }) {
 			<Mobile>
 				<div
 					id={id}
-					className="h-36 w-full flex flex-col items-start justify-center"
+					className="h-[20rem] w-full flex flex-col items-start justify-center ml-1 pl-[20px] mr-15"
 				>
-					<h2 className="text-white font-serif text-[20px] font-extralight hover:opacity-60 transition-all duration-300">
+					<h2 className="text-white font-serif text-[25px] font-extralight hover:opacity-70 duration-200">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>
 							{title}
 						</Link>
 					</h2>
-					<p className="text-white font-serif opacity-30 text-[14px] my-2">
-						{smartTruncate(excerpt, 90)}
-					</p>
+
+
 					<div className="w-full h-[30px] my-[10px] text-white flex items-center gap-6">
 						<div className="Date flex items-center opacity-40">
 							<svg
@@ -88,21 +87,28 @@ function MainArticleLink({ data }) {
 						</div>
 						{featured && <FeaturedTag />}
 					</div>
+
+
+
+
+					<p className="text-white font-serif opacity-40 text-[16px] my-2 max-w-[700px]">
+						{excerpt}
+					</p>
+					
 				</div>
 			</Mobile>
 			<Tablet>
 				<div
 					id={id}
-					className="h-36 w-full flex flex-col items-start justify-center ml-10"
+					className="h-[20rem] w-full flex flex-col items-start justify-center ml-1 pl-[100px] mr-24"
 				>
-					<h2 className="text-white font-serif text-[20px] font-extralight max-w-md">
+					<h2 className="text-white font-serif text-[30px] font-extralight hover:opacity-70 duration-200">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>
 							{title}
 						</Link>
 					</h2>
-					<p className="text-white font-serif opacity-30 text-[14px] my-2 max-w-md">
-						{smartTruncate(excerpt, 150)}
-					</p>
+
+
 					<div className="w-full h-[30px] my-[10px] text-white flex items-center gap-6">
 						<div className="Date flex items-center opacity-40">
 							<svg
@@ -146,22 +152,29 @@ function MainArticleLink({ data }) {
 						</div>
 						{featured && <FeaturedTag />}
 					</div>
+
+
+
+
+					<p className="text-white font-serif opacity-40 text-[18px] my-2 max-w-[700px]">
+						{excerpt}
+					</p>
+					
 				</div>
 			</Tablet>
 
 			<Desktop>
 				<div
 					id={id}
-					className="h-36 w-full flex flex-col items-start justify-center ml-10"
+					className="h-[20rem] w-full flex flex-col items-start justify-center ml-10 pl-[200px]"
 				>
-					<h2 className="text-white font-serif text-[20px] font-extralight">
+					<h2 className="text-white font-serif text-[34px] font-extralight hover:opacity-70 duration-200">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>
 							{title}
 						</Link>
 					</h2>
-					<p className="text-white font-serif opacity-30 text-[14px] my-2 max-w-md">
-						{smartTruncate(excerpt, 200)}
-					</p>
+
+
 					<div className="w-full h-[30px] my-[10px] text-white flex items-center gap-6">
 						<div className="Date flex items-center opacity-40">
 							<svg
@@ -205,6 +218,14 @@ function MainArticleLink({ data }) {
 						</div>
 						{featured && <FeaturedTag />}
 					</div>
+
+
+
+
+					<p className="text-white font-serif opacity-40 text-[18px] my-2 max-w-[700px]">
+						{excerpt}
+					</p>
+					
 				</div>
 			</Desktop>
 		</>

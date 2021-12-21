@@ -109,30 +109,31 @@ export async function getStaticProps(context) {
 
 		console.log(eachPost.title);
 
-		if (tags.includes("security")) {
-			// newPosts["security"].length <= 3 && newPosts["security"].push(eachPost);
-			newPosts.push(eachPost);
-		}
+		newPosts.push(eachPost);
+		// if (tags.includes("security")) {
+		// 	// newPosts["security"].length <= 3 && newPosts["security"].push(eachPost);
+		// 	newPosts.push(eachPost);
+		// }
 
-		if (tags.includes("tenets")) {
-			// newPosts["tenets"].length <= 3 && newPosts["tenets"].push(eachPost);
-			newPosts.push(eachPost);
-		}
+		// if (tags.includes("tenets")) {
+		// 	// newPosts["tenets"].length <= 3 && newPosts["tenets"].push(eachPost);
+		// 	newPosts.push(eachPost);
+		// }
 
-		if (tags.includes("self")) {
-			// newPosts["self"].length <= 3 && newPosts["self"].push(eachPost);
-			newPosts.push(eachPost);
-		}
+		// if (tags.includes("self")) {
+		// 	// newPosts["self"].length <= 3 && newPosts["self"].push(eachPost);
+		// 	newPosts.push(eachPost);
+		// }
 
-		if (tags.includes("society")) {
-			// newPosts["society"].length <= 3 && newPosts["society"].push(eachPost);
-			newPosts.push(eachPost);
-		}
+		// if (tags.includes("society")) {
+		// 	// newPosts["society"].length <= 3 && newPosts["society"].push(eachPost);
+		// 	newPosts.push(eachPost);
+		// }
 
-		if (tags.includes("statecraft")) {
-			// newPosts["statecraft"].length <= 3 && newPosts["statecraft"].push(eachPost);
-			newPosts.push(eachPost);
-		}
+		// if (tags.includes("statecraft")) {
+		// 	// newPosts["statecraft"].length <= 3 && newPosts["statecraft"].push(eachPost);
+		// 	newPosts.push(eachPost);
+		// }
 	});
 
 	if (!posts) {

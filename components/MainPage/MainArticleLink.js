@@ -35,7 +35,7 @@ function MainArticleLink({ data }) {
 			<Mobile>
 				<div
 					id={id}
-					className="h-[20rem] w-fit flex flex-col items-start justify-center"
+					className="h-[20rem] w-fit flex flex-col items-start justify-center my-2"
 				>
 					<h2 className="text-white font-serif text-[25px] font-extralight hover:opacity-70 duration-200">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>

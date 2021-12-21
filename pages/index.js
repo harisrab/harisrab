@@ -40,7 +40,7 @@ export default function Home({ newPosts }) {
 			{/* Body */}
 
 			<PostHolder>
-				<div className="flex flex-col items-start px-7 gap-[50px] md:gap-[35px] max-w-[1200px] mx-5">
+				<div className="flex flex-col items-start px-7 gap-[50px] md:gap-[35px] max-w-[1200px] mx-5 sm:mx-2">
 					{newPosts.map((eachPost, i) => (
 						<MainArticleLink key={i} data={eachPost} />
 					))}

@@ -3,7 +3,7 @@ import Script from "next/script";
 
 function HiddenHeader() {
 	return (
-	// Hey
+	
 		<Head>
 			<title>Haris Rashid</title>
 			<meta

@@ -7,6 +7,23 @@ class MyDocument extends Document {
 		return (
 			<Html>
 				<Head>
+					<script
+						async
+						src={`https://www.googletagmanager.com/gtag/js?id=${process.env.ANALYTICS_KEY}`}
+					/>
+					<script
+						dangerouslySetInnerHTML={{
+							__html: `
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
+                                gtag('config', ${process.env.ANALYTICS_KEY}, {
+                                page_path: window.location.pathname,
+                                });
+                            `,
+						}}
+					/>
+
 					<link
 						rel="preconnect"
 						href="https://fonts.googleapis.com"

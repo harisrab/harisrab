@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import BgImage from "./BgImage";
 import Link from "next/link";
-
+// import { addMember } from "../lib/ghost";
 
 function MainMenu({ isMenuVisible }) {
 	const mainMenuLinks = [
@@ -44,6 +44,8 @@ function MainMenu({ isMenuVisible }) {
 		}
 	}, [isMenuVisible]);
 
+
+
 	return (
 		<div
 			ref={menuRef}
@@ -51,8 +53,10 @@ function MainMenu({ isMenuVisible }) {
 		>
 			<div className="w-full h-full relative">
 				<BgImage menuBGRef={menuBGRef} />
+
 				<div className="h-full w-full bg-black bg-opacity-90 flex flex-col items-center justify-center absolute z-5">
-					<ul className="flex flex-col items-center justify-center ">
+				
+					{/* <ul className="flex flex-col items-center justify-center ">
 						{mainMenuLinks.map((eachLink, i) => (
 							<li
 								className="text-white py-4 opacity-70 font-serif font-light text-[20px] hover:opacity-100 cursor-pointer w-full p-5 flex items-center justify-center transition-opacity duration-200"
@@ -63,7 +67,7 @@ function MainMenu({ isMenuVisible }) {
 								</Link>
 							</li>
 						))}
-					</ul>
+					</ul> */}
 				</div>
 			</div>
 		</div>

@@ -18,10 +18,14 @@ function Header() {
 				{/* <BurgerMenu
 					isMenuVisible={isMenuVisible}
 					setIsMenuVisible={setIsMenuVisible}
-				/>
-				<MainMenu isMenuVisible={isMenuVisible} /> */}
+				/> */}
 
-				{/* <SubscribeButton/> */}
+				{/* <SubscribeButton
+					isMenuVisible={isMenuVisible}
+					setIsMenuVisible={setIsMenuVisible}
+				/> */}
+
+				<MainMenu isMenuVisible={isMenuVisible} />
 			</div>
 		</div>
 	);

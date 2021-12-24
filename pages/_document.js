@@ -23,6 +23,7 @@ class MyDocument extends Document {
                             `,
 						}}
 					/>
+					<meta name="google-site-verification" content="BuXJcAbco51XKuLgHOnR3l6N0M29avDXqW0fO1C0WkY" />
 
 					<link
 						rel="preconnect"

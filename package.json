@@ -19,6 +19,7 @@
     "@storybook/addon-postcss": "^2.0.0",
     "@tryghost/admin-api": "^1.4.4",
     "@tryghost/content-api": "^1.5.13",
+    "fs": "^0.0.1-security",
     "gsap": "^3.8.0",
     "jquery": "^3.6.0",
     "light-date": "^1.2.0",

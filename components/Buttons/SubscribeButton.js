@@ -2,8 +2,14 @@ import React from "react";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
 
-function CatalogueButton() {
-	return <ButtonWrapper variant="outlined">subscribe</ButtonWrapper>;
+function CatalogueButton({ isMenuVisible, setIsMenuVisible }) {
+
+	const toggleMenu = () => {
+		setIsMenuVisible(!isMenuVisible);
+	};
+
+
+	return <ButtonWrapper onClick={toggleMenu} variant="outlined">subscribe</ButtonWrapper>;
 }
 
 export default CatalogueButton;
@@ -19,7 +25,7 @@ const ButtonWrapper = styled(Button)`
 		padding-right: 15px !important;
 		padding-left: 15px !important;
         font-size: 13px !important;
-        font-weight: 300;
+        font-weight: 300 !important;
 
         height: 32px;
 

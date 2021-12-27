@@ -3,6 +3,7 @@ import Logo from "../Logo/Logo";
 import BurgerMenu from "../Buttons/BurgerMenu";
 import MainMenu from "../MainMenu";
 import SubscribeButton from "../Buttons/SubscribeButton";
+import UnderDev from "../Common/UnderDev";
 
 function Header() {
 	const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -25,7 +26,8 @@ function Header() {
 					setIsMenuVisible={setIsMenuVisible}
 				/> */}
 
-				<MainMenu isMenuVisible={isMenuVisible} />
+				{/* <MainMenu isMenuVisible={isMenuVisible} /> */}
+				<UnderDev />
 			</div>
 		</div>
 	);

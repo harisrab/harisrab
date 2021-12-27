@@ -105,5 +105,6 @@ export async function getStaticProps(context) {
 
 	return {
 		props: { newPosts, newPages },
+		revalidate: 10,
 	};
 }

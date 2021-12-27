@@ -6,7 +6,6 @@ import Header from "../components/Common/Header";
 import PostHero from "../components/PostHero";
 import Footer from "../components/Common/Footer";
 import ScrollToTopButton from "../components/Buttons/ScrollToTopButton";
-import useScrollPosition from "@react-hook/window-scroll";
 import RelatedPosts from "../components/RelatedPosts";
 
 export const getStaticProps = async ({ params }) => {
@@ -35,7 +34,6 @@ export const getStaticPaths = () => {
 
 function Page({ page }) {
 	const router = useRouter();
-	const scrollY = useScrollPosition(50);
 
 	let heroData = {};
 
@@ -57,7 +55,7 @@ function Page({ page }) {
 		return (
 			<div className="w-screen bg-[#0b0909] flex flex-col justify-start relative items-center overflow-hidden">
 				<Header />
-				<ScrollToTopButton scrollPos={scrollY} />
+				<ScrollToTopButton  />
 				<PostHero heroData={heroData} />
 				<Content
 					dangerouslySetInnerHTML={{ __html: page.html }}

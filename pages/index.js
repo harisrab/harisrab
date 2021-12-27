@@ -50,11 +50,9 @@ export default function Home({ newPosts, newPages }) {
 
 			{/* Body */}
 
-			<div className="w-full min-h-[500px] flex">
-				<Desktop>
-					<Sidebar pages={newPages} />
-				</Desktop>
-				<div className="flex flex-col object-contain items-start px-5 my-[150px] gap-[50px] md:gap-[35px] max-w-[1200px] mx-5 sm:mx-2">
+			<div className="w-full min-h-[500px] flex flex-col md:flex-row">
+				<Sidebar pages={newPages} />
+				<div className="flex flex-col object-contain items-start px-5 my-[150px] mt-[0px] gap-[50px] md:gap-[35px] max-w-[1200px] mx-5 sm:mx-2 md:my-[150px]">
 					{newPosts.map((eachPost, i) => (
 						<MainArticleLink key={i} data={eachPost} />
 					))}

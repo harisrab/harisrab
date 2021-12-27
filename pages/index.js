@@ -14,10 +14,18 @@ import screenfull from "screenfull";
 import MainArticleLink from "../components/MainPage/MainArticleLink";
 
 // Get Utility for Getting Ghost Posts
-import { getPosts } from "../lib/posts";
-import Analytics from "../components/Analytics";
+import { getPosts, getPages } from "../lib/posts";
 
-export default function Home({ newPosts }) {
+import Analytics from "../components/Analytics";
+import Sidebar from "../components/Sidebar";
+import { useMediaQuery } from "react-responsive";
+
+export default function Home({ newPosts, newPages }) {
+	const Desktop = ({ children }) => {
+		const isDesktop = useMediaQuery({ minWidth: 992 });
+		return isDesktop ? children : null;
+	};
+
 	const mainMenuLinks = [
 		{ display: "On Self", link: "self" },
 		{ display: "Justice and Society", link: "society" },
@@ -42,13 +50,16 @@ export default function Home({ newPosts }) {
 
 			{/* Body */}
 
-			<PostHolder>
-				<div className="flex flex-col items-start px-5 my-[150px] gap-[50px] md:gap-[35px] max-w-[1200px] mx-5 sm:mx-2">
+			<div className="w-full min-h-[500px] flex">
+				<Desktop>
+					<Sidebar pages={newPages} />
+				</Desktop>
+				<div className="flex flex-col object-contain items-start px-5 my-[150px] gap-[50px] md:gap-[35px] max-w-[1200px] mx-5 sm:mx-2">
 					{newPosts.map((eachPost, i) => (
 						<MainArticleLink key={i} data={eachPost} />
 					))}
 				</div>
-			</PostHolder>
+			</div>
 
 			{/* 
 			<ul className="mt-[150px]">
@@ -67,76 +78,19 @@ export default function Home({ newPosts }) {
 	);
 }
 
-const PostHolder = styled.div`
-	width: 100%;
-	min-height: 500px;
-
-	background-color: #0b0909;
-	/* margin-top: 150px;
-	margin-bottom: 150px; */
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-`;
-
-const HeroWrapper = styled.div`
-	height: 100vh;
-	width: 100vw;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	background-color: #0b0909;
-`;
-
 export async function getStaticProps(context) {
 	const posts = await getPosts();
-
-	// console.log(posts);
-	// console.log("New Posts ====> ", posts);
-
-	// let newPosts = {
-	// 	security: [],
-	// 	tenets: [],
-	// 	self: [],
-	// 	society: [],
-	// 	statecraft: [],
-	// };
+	const pages = await getPages();
 
 	let newPosts = [];
+	let newPages = [];
 
 	posts.forEach((eachPost, i) => {
-		const tags = eachPost.tags.map((eachTag) => eachTag.name);
-
-		console.log(eachPost.title);
-
 		newPosts.push(eachPost);
-		// if (tags.includes("security")) {
-		// 	// newPosts["security"].length <= 3 && newPosts["security"].push(eachPost);
-		// 	newPosts.push(eachPost);
-		// }
+	});
 
-		// if (tags.includes("tenets")) {
-		// 	// newPosts["tenets"].length <= 3 && newPosts["tenets"].push(eachPost);
-		// 	newPosts.push(eachPost);
-		// }
-
-		// if (tags.includes("self")) {
-		// 	// newPosts["self"].length <= 3 && newPosts["self"].push(eachPost);
-		// 	newPosts.push(eachPost);
-		// }
-
-		// if (tags.includes("society")) {
-		// 	// newPosts["society"].length <= 3 && newPosts["society"].push(eachPost);
-		// 	newPosts.push(eachPost);
-		// }
-
-		// if (tags.includes("statecraft")) {
-		// 	// newPosts["statecraft"].length <= 3 && newPosts["statecraft"].push(eachPost);
-		// 	newPosts.push(eachPost);
-		// }
+	pages.forEach((eachPage, i) => {
+		newPages.push(eachPage);
 	});
 
 	if (!posts) {
@@ -145,7 +99,13 @@ export async function getStaticProps(context) {
 		};
 	}
 
+	if (!pages) {
+		return {
+			notFound: true,
+		};
+	}
+
 	return {
-		props: { newPosts },
+		props: { newPosts, newPages },
 	};
 }

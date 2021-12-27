@@ -24,10 +24,10 @@ function PostHero({ heroData }) {
 			<h1 className="text-white font-serif text-[30px] flex justify-center items-center text-center px-7 md:text-[40px] max-w-4xl">
 				{heroData.title}
 			</h1>
-			<p className="font-serif text-white text-[16px] text-center px-10 my-5 opacity-60 max-w-2xl">
+			<p className="font-serif text-white text-[18px] text-center px-10 my-5 opacity-60 max-w-2xl">
 				{heroData.excerpt}
 			</p>
-			<div className="text-white font-serif flex gap-5 justify-between">
+			<div className="text-white font-serif flex gap-5 justify-between text-[20px]">
 				<div className="time"></div>
 				<div className="publishing_date text-white font-serif">
 					{format(interimDate, "{dd}") +

@@ -1,22 +1,28 @@
 import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
-import { getPostBySlug } from "../../lib/posts";
+import { getPageBySlug } from "../lib/posts";
 import styled from "styled-components";
-import Header from "../../components/Common/Header";
-import PostHero from "../../components/PostHero";
-import Footer from "../../components/Common/Footer";
-import ScrollToTopButton from "../../components/Buttons/ScrollToTopButton";
+import Header from "../components/Common/Header";
+import PostHero from "../components/PostHero";
+import Footer from "../components/Common/Footer";
+import ScrollToTopButton from "../components/Buttons/ScrollToTopButton";
 import useScrollPosition from "@react-hook/window-scroll";
-import RelatedPosts from "../../components/RelatedPosts";
+import RelatedPosts from "../components/RelatedPosts";
 
 export const getStaticProps = async ({ params }) => {
-	let post = null;
+	let page = null;
+	console.log("PARAMS =====> ", params);
+
 	try {
-		post = await getPostBySlug(params.slug);
-	} catch (err) {}
+		page = await getPageBySlug(params.pageslug);
+	} catch (err) {
+		console.error(err);
+	}
+
+	console.log("PAGE =====> ", page);
 
 	return {
-		props: { post },
+		props: { page },
 	};
 };
 
@@ -27,7 +33,7 @@ export const getStaticPaths = () => {
 	};
 };
 
-function Post({ post }) {
+function Page({ page }) {
 	const router = useRouter();
 	const scrollY = useScrollPosition(50);
 
@@ -37,23 +43,24 @@ function Post({ post }) {
 		return <h1>Loading...</h1>;
 	} else {
 		heroData = {
-			title: post.title,
-			excerpt: post.excerpt,
-			published_at: post.published_at,
-			reading_time: post.reading_time,
+			title: page.title,
+			excerpt: page.custom_excerpt,
+			published_at: page.published_at,
+			reading_time: page.reading_time,
 		};
 
-		console.log("Post Data ===> ", post);
+		console.log("Page Data ===> ", page);
 	}
 
-	if (post) {
+	// return <div>Hello</div>;
+	if (page) {
 		return (
 			<div className="w-screen bg-[#0b0909] flex flex-col justify-start relative items-center overflow-hidden">
 				<Header />
 				<ScrollToTopButton scrollPos={scrollY} />
 				<PostHero heroData={heroData} />
 				<Content
-					dangerouslySetInnerHTML={{ __html: post.html }}
+					dangerouslySetInnerHTML={{ __html: page.html }}
 					className="font-serif"
 				></Content>
 				{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -75,12 +82,12 @@ function Post({ post }) {
 	}
 }
 
-export default Post;
+export default Page;
 
 const Content = styled.div`
-	max-width: 720px;
+	max-width: 700px;
 	background-color: #0b0909;
-	color: #acacac;
+	color: #d8d8d8;
 	padding-left: 35px;
 	padding-right: 35px;
 
@@ -116,6 +123,8 @@ const Content = styled.div`
 		margin-bottom: 25px;
 	}
 
+	
+
 	hr {
 		margin-top: 40px;
 		margin-bottom: 40px;
@@ -149,6 +158,8 @@ const Content = styled.div`
 			margin-top: 5px;
 			margin-bottom: 5px;
 			padding-left: 10px;
+			font-size: 20px;
+
 		}
 	}
 

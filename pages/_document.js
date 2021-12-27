@@ -11,6 +11,7 @@ class MyDocument extends Document {
 						async
 						src={`https://www.googletagmanager.com/gtag/js?id=${process.env.ANALYTICS_KEY}`}
 					/>
+
 					<script
 						dangerouslySetInnerHTML={{
 							__html: `
@@ -23,7 +24,10 @@ class MyDocument extends Document {
                             `,
 						}}
 					/>
-					<meta name="google-site-verification" content="BuXJcAbco51XKuLgHOnR3l6N0M29avDXqW0fO1C0WkY" />
+					<meta
+						name="google-site-verification"
+						content="BuXJcAbco51XKuLgHOnR3l6N0M29avDXqW0fO1C0WkY"
+					/>
 
 					<link
 						rel="preconnect"

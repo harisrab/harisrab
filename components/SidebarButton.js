@@ -11,14 +11,14 @@ function SidebarButton({ eachPage }) {
 	console.log(eachPage);
 
 	return (
-		<SidebarBtnWrapper variant="outlined">
-			<Link href="/[pageslug]" as={`/${pageslug}`}>
+		<Link href="/[pageslug]" as={`/${pageslug}`} passHref>
+			<SidebarBtnWrapper variant="outlined">
 				{/* <p className="text-white font-serif opacity-40 font-light text-[18px]  hover:bg-[#ffffff13] hover:text-[#e2e2e2] hover:opacity-100 duration-200 flex items-center justify-left pl-6 rounded-[20px]"> */}
-					{title}
-					{/* Hello */}
+				{title}
+				{/* Hello */}
 				{/* </p> */}
-			</Link>
-		</SidebarBtnWrapper>
+			</SidebarBtnWrapper>
+		</Link>
 	);
 }
 
@@ -31,7 +31,7 @@ const SidebarBtnWrapper = styled(Button)`
 		font-family: serif !important;
 		text-transform: capitalize !important;
 		font-size: 16px;
-		font-weight: 100 !Important;
+		font-weight: 100 !important;
 		color: #fcfcfcd3 !important;
 		padding-right: 0px !important;
 		padding-left: 0px !important;

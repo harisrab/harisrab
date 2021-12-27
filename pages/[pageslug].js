@@ -55,7 +55,7 @@ function Page({ page }) {
 		return (
 			<div className="w-screen bg-[#0b0909] flex flex-col justify-start relative items-center overflow-hidden">
 				<Header />
-				<ScrollToTopButton  />
+				<ScrollToTopButton />
 				<PostHero heroData={heroData} />
 				<Content
 					dangerouslySetInnerHTML={{ __html: page.html }}
@@ -121,8 +121,6 @@ const Content = styled.div`
 		margin-bottom: 25px;
 	}
 
-	
-
 	hr {
 		margin-top: 40px;
 		margin-bottom: 40px;
@@ -157,7 +155,6 @@ const Content = styled.div`
 			margin-bottom: 5px;
 			padding-left: 10px;
 			font-size: 20px;
-
 		}
 	}
 

@@ -196,6 +196,11 @@ const Content = styled.div`
 		}
 	}
 
+
+	a {
+		text-decoration: underline;
+	}
+
 	@media (min-width: 768px) {
 		h1 {
 			font-size: 35px;

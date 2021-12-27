@@ -49,9 +49,11 @@ const SidebarBtnWrapper = styled(Button)`
 		color: #fcfcfcd3 !important;
 		padding-right: 5px !important;
 		padding-left: 0px !important;
-
+		background-color: #fcfcfc11 !important;
+		box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+		
 		height: 40px;
-		width: 130px;
+		width: 135px;
 
 		margin-left: 14px;
 

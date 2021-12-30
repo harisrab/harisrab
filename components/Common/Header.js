@@ -4,6 +4,7 @@ import BurgerMenu from "../Buttons/BurgerMenu";
 import MainMenu from "../MainMenu";
 import SubscribeButton from "../Buttons/SubscribeButton";
 import UnderDev from "../Common/UnderDev";
+import SubscribeModal from "../SubscribeModal";
 
 function Header() {
 	const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -21,13 +22,18 @@ function Header() {
 					setIsMenuVisible={setIsMenuVisible}
 				/> */}
 
-				{/* <SubscribeButton
+				<SubscribeButton
 					isMenuVisible={isMenuVisible}
 					setIsMenuVisible={setIsMenuVisible}
-				/> */}
+				/>
+
+				<SubscribeModal
+					isMenuVisible={isMenuVisible}
+					setIsMenuVisible={setIsMenuVisible}
+				/>
 
 				{/* <MainMenu isMenuVisible={isMenuVisible} /> */}
-				<UnderDev />
+				{/* <UnderDev /> */}
 			</div>
 		</div>
 	);

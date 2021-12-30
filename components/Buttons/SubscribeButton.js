@@ -5,6 +5,7 @@ import styled from "styled-components";
 function CatalogueButton({ isMenuVisible, setIsMenuVisible }) {
 
 	const toggleMenu = () => {
+		console.log("Toggle")
 		setIsMenuVisible(!isMenuVisible);
 	};
 

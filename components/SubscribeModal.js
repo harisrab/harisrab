@@ -68,7 +68,7 @@ function NewsletterPopup({ isMenuVisible, setIsMenuVisible }) {
 
 	return (
 		<Wrapper showNewsletter={isMenuVisible}>
-			<div className="upper">
+			<div className="upper font-spectral">
 				{!status ? <p>Subscribe To</p> : <p>Subscribed</p>}
 				<h2>Haris Rashid</h2>
 				{!status && (
@@ -85,6 +85,7 @@ function NewsletterPopup({ isMenuVisible, setIsMenuVisible }) {
 						<input
 							type="text"
 							placeholder="Email address"
+							className="font-spectral"
 							onChange={handleEmail}
 							value={email}
 							ref={inputElm}
@@ -203,7 +204,7 @@ const Wrapper = styled.div`
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-family: "Spectral", sans-serif;
+		/* font-family: "Spectral", sans-serif; */
 		width: 100%;
 
 		p {
@@ -249,7 +250,7 @@ const Wrapper = styled.div`
 
 			h4 {
 				color: #eeeeee;
-				font-family: "Spectral", sans-serif;
+				/* font-family: "Spectral", sans-serif; */
 				font-weight: 300;
 				font-size: 15px;
 				width: 80%;
@@ -264,13 +265,13 @@ const Wrapper = styled.div`
 			align-items: center;
 			justify-content: center;
 			position: relative;
-			font-family: "Spectral", sans-serif;
+			/* font-family: "Spectral", sans-serif; */
 
 			margin-right: 25px;
 			margin-left: 25px;
 
 			input {
-				font-family: "Spectral", sans-serif;
+				/* font-family: "Spectral", sans-serif; */
 				height: 35px;
 				width: 100%;
 				background-color: transparent;

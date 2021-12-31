@@ -47,11 +47,15 @@ const SidebarBtnWrapper = styled(Button)`
 		font-size: 16px;
 		font-weight: 100 !important;
 		color: #fcfcfcd3 !important;
-		padding-right: 5px !important;
-		padding-left: 0px !important;
+		padding-right: 0px !important;
+		padding-left: 10px !important;
 		background-color: #fcfcfc11 !important;
-		box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-		
+		box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+			rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+		display: flex;
+		justify-content: flex-start;
+
 		height: 40px;
 		width: 135px;
 
@@ -59,20 +63,19 @@ const SidebarBtnWrapper = styled(Button)`
 
 		/* background-color: #fcfcfc11 !important; */
 		svg {
-			opacity: 0.7
+			opacity: 0.7;
 		}
 
 		transition: 0.3s !important;
-		
+
 		&:hover {
 			background-color: #fcfcfc24 !important;
 			border: none;
-			
+
 			svg {
 				opacity: 1;
 				transition: 0.3s !important;
 			}
-			
 		}
 	}
 `;

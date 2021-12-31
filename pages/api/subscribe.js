@@ -15,7 +15,7 @@ export default function async(req, res) {
 
 	// console.log("Request Object ===> ", typeof JSON.parse(req.body));
 	// console.log("Request Name ===> ", name);
-	// console.log("Request Email ===> ", email);
+	console.log("Request Email ===> ", email);
 
 	try {
 		let member = admin.members

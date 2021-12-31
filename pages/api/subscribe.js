@@ -8,7 +8,7 @@ const admin = new GhostAdminAPI({
 	version: "v3",
 });
 
-export default function async(req, res) {
+export default async function addMember(req, res) {
 	const { email } = req.body;
 
 	// console.log("Request Obj ===> ", req.body.email);
@@ -18,7 +18,7 @@ export default function async(req, res) {
 	console.log("Request Email ===> ", email);
 
 	try {
-		let member = admin.members
+		let member = await admin.members
 			.add({ email }, { send_email: true, email_type: "subscribe" })
 			.catch((error) => console.log(error));
 

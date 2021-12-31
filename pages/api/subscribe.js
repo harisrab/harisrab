@@ -20,7 +20,7 @@ export default async function addMember(req, res) {
 
 	try {
 		let member = await admin.members
-			.add({ email }, { send_email: true, email_type: "subscribe" })
+			.add({ email }, { send_email: false, email_type: "subscribe" })
 			.catch((error) => console.log(error));
 
 		return res.status(200).json({ error: "" });

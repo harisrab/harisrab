@@ -15,6 +15,9 @@ function MainArticleLink({ data }) {
 		published_at,
 		slug,
 	} = data;
+
+
+	
 	const interimDate = new Date(published_at);
 
 	const Desktop = ({ children }) => {

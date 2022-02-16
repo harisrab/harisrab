@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/dist/client/link";
 import { useState, useEffect } from "react";
-import Button from "@mui/material/Button";
 import styled from "styled-components";
 
 function SidebarButton({ eachPage }) {
@@ -38,7 +37,13 @@ function SidebarButton({ eachPage }) {
 
 export default SidebarButton;
 
-const SidebarBtnWrapper = styled(Button)`
+const SidebarBtnWrapper = styled.div`
+	display: flex;
+	align-items: center;
+	padding: 5px 10px;
+	&:hover {
+		curson: pointer;
+	}	
 	&&& {
 		border: none;
 		border-radius: 20px !important;
@@ -73,7 +78,8 @@ const SidebarBtnWrapper = styled(Button)`
 		&:hover {
 			background-color: #fcfcfc24 !important;
 			border: none;
-
+			cursor: pointer;
+			transition: 0.1s;
 			svg {
 				opacity: 1;
 				transition: 0.3s !important;

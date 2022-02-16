@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@mui/material/Button";
 import styled from "styled-components";
 
 function CatalogueButton({ isMenuVisible, setIsMenuVisible }) {
@@ -15,7 +14,10 @@ function CatalogueButton({ isMenuVisible, setIsMenuVisible }) {
 
 export default CatalogueButton;
 
-const ButtonWrapper = styled(Button)`
+const ButtonWrapper = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&&&{
 		border: 1px solid #fcfcfcd3 ;
@@ -34,6 +36,7 @@ const ButtonWrapper = styled(Button)`
 		transition: 0.3s !important;
 
 		&:hover {
+			cursor: pointer;
 			background-color: #fcfcfc24 !important;
 			border: 1px solid #fcfcfcd3 !important;
 		}

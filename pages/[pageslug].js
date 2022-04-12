@@ -54,9 +54,9 @@ function Page({ page }) {
 	// return <div>Hello</div>;
 	if (page) {
 		return (
-			<div className="w-screen bg-[#0b0909] flex flex-col justify-start relative items-center overflow-hidden">
+			<div className="w-screen bg-[#ececec] flex flex-col justify-start relative items-center overflow-hidden">
 				<Header />
-				<ScrollToTopButton />
+				{/* <ScrollToTopButton /> */}
 				<PostHero heroData={heroData} />
 				<Content
 					dangerouslySetInnerHTML={{ __html: page.html }}
@@ -85,33 +85,33 @@ export default Page;
 
 const Content = styled.div`
 	max-width: 700px;
-	background-color: #0b0909;
-	color: #d8d8d8;
+	background-color: #ececec;
+	color: black;
 	padding-left: 35px;
 	padding-right: 35px;
 
 	h1 {
-		color: white;
+		color: black;
 		font-size: 27px;
 		margin-bottom: 30px;
 	}
 
 	h2 {
-		color: white;
+		color: black;
 		font-size: 21px;
 		margin-bottom: 20px;
 		margin-top: 50px;
 	}
 
 	h3 {
-		color: white;
+		color: black;
 		font-size: 20px;
 		margin-bottom: 20px;
 		margin-top: 50px;
 	}
 
 	h4 {
-		color: white;
+		color: black;
 		font-size: 21px;
 		margin-bottom: 20px;
 		margin-top: 50px;
@@ -195,7 +195,6 @@ const Content = styled.div`
 			/* position: relative; */
 		}
 	}
-
 
 	a {
 		text-decoration: underline;

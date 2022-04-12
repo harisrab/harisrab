@@ -37,7 +37,7 @@ function NewsletterPopup({ isMenuVisible, setIsMenuVisible }) {
 
 	const handleSubscription = async (e) => {
 		e.preventDefault();
-		console.log("Subscription Button Clicked");
+		// console.log("Subscription Button Clicked");
 
 		if (emailValid) {
 			const res = await fetch("/api/subscribe", {

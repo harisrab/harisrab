@@ -16,11 +16,11 @@ function Footer() {
 					Haris Rashid
 				</h3>
 				<p className="font-serif text-[15px] mt-2 opacity-50">
-					© 2021 Haris Rashid. All rights reserved.
+					© 2022 Haris Rashid. All rights reserved.
 				</p>
 			</div>
 
-			<div className="md:flex md:gap-5 md:w-[45%] md:h-[70%] md:items-center md:mt-6">
+			{/* <div className="md:flex md:gap-5 md:w-[45%] md:h-[70%] md:items-center md:mt-6">
 				<ul className="flex flex-col items-center gap-4 md:items-start md:flex-wrap md:h-full md:gap-3">
 					{links.map((eachLink, i) => (
 						<li
@@ -31,7 +31,7 @@ function Footer() {
 						</li>
 					))}
 				</ul>
-			</div>
+			</div> */}
 		</div>
 	);
 }

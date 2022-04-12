@@ -41,14 +41,14 @@ function Post({ post }) {
 			reading_time: post.reading_time,
 		};
 
-		console.log("Post Data ===> ", post);
+		// console.log("Post Data ===> ", post);
 	}
 
 	if (post) {
 		return (
-			<div className="w-screen bg-[#0b0909] flex flex-col justify-start relative items-center overflow-hidden">
+			<div className="w-screen bg-[#ececec] flex flex-col justify-start relative items-center overflow-hidden">
 				<Header />
-				<ScrollToTopButton />
+				{/* <ScrollToTopButton /> */}
 				<PostHero heroData={heroData} />
 				<Content
 					dangerouslySetInnerHTML={{ __html: post.html }}
@@ -77,19 +77,19 @@ export default Post;
 
 const Content = styled.div`
 	max-width: 720px;
-	background-color: #0b0909;
-	color: #acacac;
+	background-color: #ececec;
+	color: black;
 	padding-left: 35px;
 	padding-right: 35px;
 
 	h1 {
-		color: white;
+		color: black;
 		font-size: 27px;
 		margin-bottom: 30px;
 	}
 
 	h2 {
-		color: white;
+		color: black;
 		font-size: 21px;
 		margin-bottom: 20px;
 		margin-top: 50px;
@@ -103,7 +103,7 @@ const Content = styled.div`
 	}
 
 	h4 {
-		color: white;
+		color: black;
 		font-size: 21px;
 		margin-bottom: 20px;
 		margin-top: 50px;
@@ -122,7 +122,7 @@ const Content = styled.div`
 
 	blockquote {
 		p {
-			color: #33ff00;
+			color: #6a6a6a;
 			font-style: italic;
 			/* max-width: 400px; */
 			width: 100%;

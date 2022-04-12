@@ -2,7 +2,7 @@ import React from "react";
 
 function FeaturedTag() {
 	return (
-		<div className="h-[17px] w-auto flex items-center bg-[#12E300] bg-opacity-20 border-[1px] border-[#12E300] text-[#12E300] rounded-[10px]">
+		<div className="h-[17px] w-auto flex items-center bg-[#13e3001f] bg-opacity-20 border-[1px] border-[#0b8800] text-[#0b8000] rounded-[10px]">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				className="h-[15px] w-[15px]"

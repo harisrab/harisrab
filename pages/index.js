@@ -34,14 +34,14 @@ export default function Home({ newPosts, newPages }) {
 		{ display: "Stratagems", link: "security" },
 	];
 
-	console.log("Title ===> ", newPosts[0].title);
+	// console.log("Title ===> ", newPosts[0].title);
 
 	return (
-		<div className="bg-[#0B0909] h-auto flex flex-col items-center overflow-hidden">
+		<div className="bg-[#ececec] h-auto flex flex-col items-center overflow-hidden">
 			{/* Header */}
 			<HiddenHeader />
 			<Header />
-			<ScrollToTopButton />
+			{/* <ScrollToTopButton /> */}
 
 			<Analytics />
 
@@ -52,6 +52,7 @@ export default function Home({ newPosts, newPages }) {
 
 			<div className="w-full min-h-[500px] flex flex-col md:flex-row">
 				<Sidebar pages={newPages} />
+				<div className="w-screen h-[100px] md:hidden"></div>
 				<div className="flex flex-col object-contain items-start px-5 my-[150px] mt-[0px] gap-[50px] md:gap-[35px] max-w-[1200px] mx-5 sm:mx-2 md:my-[150px]">
 					{newPosts.map((eachPost, i) => (
 						<MainArticleLink key={i} data={eachPost} />

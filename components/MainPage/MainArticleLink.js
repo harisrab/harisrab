@@ -40,13 +40,13 @@ function MainArticleLink({ data }) {
 					id={id}
 					className="h-[24rem] w-fit flex flex-col items-start justify-center my-2"
 				>
-					<h2 className="text-white font-serif text-[25px] font-extralight hover:opacity-70 duration-200">
+					<h2 className="text-black font-serif text-[25px] font-extralight hover:opacity-70 duration-200">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>
 							{title}
 						</Link>
 					</h2>
 
-					<div className="w-full h-[30px] my-[10px] text-white flex items-center gap-6">
+					<div className="w-full h-[30px] my-[10px] text-black flex items-center gap-6">
 						<div className="Date flex items-center opacity-40">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,7 @@ function MainArticleLink({ data }) {
 						{featured && <FeaturedTag />}
 					</div>
 
-					<p className="text-white font-serif opacity-40 text-[16px] my-2 max-w-[700px]">
+					<p className="text-black font-serif opacity-40 text-[16px] my-2 max-w-[700px]">
 						{excerpt}
 					</p>
 				</div>
@@ -100,13 +100,13 @@ function MainArticleLink({ data }) {
 					id={id}
 					className="h-[20rem] w-fit flex flex-col items-start justify-center"
 				>
-					<h2 className="text-white font-serif text-[30px] font-extralight hover:opacity-70 duration-200">
+					<h2 className="text-black font-serif text-[30px] font-normal hover:opacity-70 duration-200">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>
 							{title}
 						</Link>
 					</h2>
 
-					<div className="w-full h-[30px] my-[10px] text-white flex items-center gap-6">
+					<div className="w-full h-[30px] my-[10px] text-black flex items-center gap-6">
 						<div className="Date flex items-center opacity-40">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +150,7 @@ function MainArticleLink({ data }) {
 						{featured && <FeaturedTag />}
 					</div>
 
-					<p className="text-white font-serif opacity-40 text-[18px] my-2 max-w-[700px]">
+					<p className="text-black font-serif opacity-40 text-[18px] my-2 max-w-[700px]">
 						{excerpt}
 					</p>
 				</div>
@@ -161,13 +161,13 @@ function MainArticleLink({ data }) {
 					id={id}
 					className="h-[20rem] w-fit flex flex-col items-start justify-center"
 				>
-					<h2 className="text-white font-serif text-[34px] font-extralight hover:opacity-70 duration-200">
+					<h2 className="text-black font-serif text-[34px] font-normal hover:opacity-70 duration-200">
 						<Link href="/post/[slug]" as={`/post/${slug}`}>
 							{title}
 						</Link>
 					</h2>
 
-					<div className="w-full h-[30px] my-[10px] text-white flex items-center gap-6">
+					<div className="w-full h-[30px] my-[10px] text-black flex items-center gap-6">
 						<div className="Date flex items-center opacity-40">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +211,7 @@ function MainArticleLink({ data }) {
 						{featured && <FeaturedTag />}
 					</div>
 
-					<p className="text-white font-serif opacity-40 text-[18px] my-2 max-w-[700px]">
+					<p className="text-black font-serif opacity-40 text-[18px] my-2 max-w-[700px]">
 						{excerpt}
 					</p>
 				</div>

@@ -9,7 +9,10 @@ module.exports = {
 		fontFamily: {
 			serif: ["Cormorant Garamond", "serif", "system-ui"],
 			sans: ["Roboto", "sans-serif"],
-			spectral: ["Spectral", "serif"]
+			spectral: ["Spectral", "serif"],
+			prompt: ["Prompt", "serif"],
+			didact: ["Didact Gothic", 'sans'],
+			montessart: ["Montserrat", 'sans'],
 		},
 		fontSize: {
 			h1: ".75rem",
@@ -31,7 +34,10 @@ module.exports = {
 			"mainImage-tenets": "url('/assets/mainMenu/tenets-bg.jpg')",
 			"mainImage-security": "url('/assets/mainMenu/security-bg.jpg')",
 			"mainImage-self": "url('/assets/mainMenu/self-bg.jpg')",
+			'port_img': "url('/port_bg.jpg')",
 		},
+
+
 	},
 	variants: {
 		extend: {},

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 function PortNav() {
   return (
@@ -8,9 +9,19 @@ function PortNav() {
                 </div> 
                   <div className="w-full h-full pl-10">
                     <ul className='text-white font-sans text-[12px] tracking-[5px] uppercase h-full w-full flex items-center justify-between hover:cursor-pointer'>
-                    <li className='hover:opacity-60 duration-300'>Work</li>
-                    <li className='hover:opacity-60 duration-300'>About</li>
-                    <li className="hover:opacity-60 duration-300">Github</li>
+                    
+                    <Link href="/">
+                      <li className='hover:opacity-60 duration-300'>Work</li>
+                    </Link>
+                    <Link href="/">
+                      <li className='hover:opacity-60 duration-300'>Writings</li>
+                    </Link>
+                    <Link href="/">
+                      <li className='hover:opacity-60 duration-300'>About</li>
+                    </Link>
+                    <a href='https://github.com/harisrab'>
+                      <li className="hover:opacity-60 duration-300">Github</li>
+                    </a>
                  </ul>
                   </div>
                 </div>

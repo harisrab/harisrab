@@ -11,7 +11,7 @@ function ProjectThumb({type, bg, title, desc, stack, deployment, github}) {
   }, [stack])
   return (
         <div className='relative h-[400px] w-full md:w-[600px] bg-yellow-400 text-white flex flex-col  md:relative'>
-            <Image priority layout="fill" src={bg} className='h-[50%] md:h-full w-full md:absolute t-0 l-0 object-fill md:object-cover'/>
+            <Image priority alt={""} layout="fill" src={bg} className='h-[50%] md:h-full w-full md:absolute t-0 l-0 object-fill md:object-cover'/>
             <div className='uppercase font-sans text-[12px] tracking-[3px] flex flex-col justify-between p-8 h-full w-full md:absolute md:t-0 md:l-0 bg-black opacity-0 hover:opacity-80 duration-300'>
               <div>
                   <p className=''>{type}</p>
@@ -21,10 +21,10 @@ function ProjectThumb({type, bg, title, desc, stack, deployment, github}) {
               </div>  
               <div>
               {deployment && (
-                  <p className='normal-case mb-4 tracking-[2px]'>Deployment: <a target="_blank" href={deployment} className="underline text-gray-400 hover:text-gray-500 duration-200">{deployment}</a></p>
+                  <p className='normal-case mb-4 tracking-[2px]'>Deployment: <a rel="noreferrer" target="_blank" href={deployment} className="underline text-gray-400 hover:text-gray-500 duration-200">{deployment}</a></p>
               )}
               {github && (
-                  <p className='normal-case tracking-[2px]'>Github: <a target="_blank" href={github} className="underline text-gray-400 hover:text-gray-500 duration-200">{github}</a></p>
+                  <p className='normal-case tracking-[2px]'>Github: <a rel="noreferrer" target="_blank" href={github} className="underline text-gray-400 hover:text-gray-500 duration-200">{github}</a></p>
               )}
               </div>
             </div>

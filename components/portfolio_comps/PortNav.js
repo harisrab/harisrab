@@ -10,13 +10,13 @@ function PortNav() {
                   <div className="w-full h-full md:pl-10">
                     <ul className='text-white font-sans text-[12px] tracking-[5px] uppercase h-full w-full flex items-center justify-between flex-col md:flex-row  hover:cursor-pointer'>
                     
-                    <Link href="/">
+                    <Link href="/" passHref>
                       <li className='hover:opacity-60 duration-300'>Work</li>
                     </Link>
-                    <Link href="/">
+                    <Link href="/" passHref>
                       <li className='hover:opacity-60 duration-300'>Writings</li>
                     </Link>
-                    <Link href="/">
+                    <Link href="/" passHref>
                       <li className='hover:opacity-60 duration-300'>About</li>
                     </Link>
                     <a href='https://github.com/harisrab'>

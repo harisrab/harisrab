@@ -1,48 +1,52 @@
+import React from "react";
+import fs from "fs";
+
 const Sitemap = () => {};
 
-const GhostContentAPI = require("@tryghost/content-api");
+export const getServerSideProps = ({ res }) => {
+  const baseUrl = {
+    development: "http://localhost:3000",
+    production: "https://harisrab.com",
+  }[process.env.NODE_ENV];
 
-export const getServerSideProps = async ({ res }) => {
-	// Create API instance with site credentials
-	const api = new GhostContentAPI({
-		url: "https://deslettres.digitalpress.blog",
-		key: process.env.CONTENT_API_KEY,
-		version: "v3",
-	});
+  const staticPages = fs
+    .readdirSync("pages")
+    .filter((staticPage) => {
+      return ![
+        "_app.js",
+        "_document.js",
+        "_error.js",
+        "sitemap.xml.js",
+      ].includes(staticPage);
+    })
+    .map((staticPagePath) => {
+      return `${baseUrl}/${staticPagePath}`;
+    });
 
-	const getPosts = async () =>
-		await api.posts
-			.browse({
-				include: "tags,authors",
-				limit: "all",
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-
-	const posts = await getPosts();
-
-	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      ${staticPages
+        .map((url) => {
+          return `
             <url>
-                <loc>https://harisrab.com</loc>
+              <loc>${url}</loc>
+              <lastmod>${new Date().toISOString()}</lastmod>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
             </url>
-            ${posts
-				.map(
-					(post) => `
-            <url>
-                <loc>https://harisrab.com/post/${post.slug}</loc>
-            </url>`
-				)
-				.join("\n")}
-        </urlset>
-        `;
+          `;
+        })
+        .join("")}
+    </urlset>
+  `;
 
-	res.setHeader("Content-Type", "text/xml");
-	res.write(sitemap);
-	res.end();
+  res.setHeader("Content-Type", "text/xml");
+  res.write(sitemap);
+  res.end();
 
-	return { props: {} };
+  return {
+    props: {},
+  };
 };
 
 export default Sitemap;
